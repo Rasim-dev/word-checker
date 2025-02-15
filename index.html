@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Checker</title>
+    <style>
+        body {
+            background-color: #2b2b2b;
+            color: #d4f7c5;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #88cc88;
+            background-color: #3a3a3a;
+            color: #d4f7c5;
+            outline: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #88cc88;
+            color: #2b2b2b;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #77bb77;
+        }
+        .icon {
+            font-size: 40px;
+            margin-top: 20px;
+        }
+        .correct {
+            color: #00ff00;
+        }
+        .incorrect {
+            color: #ff4444;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Enter the word:</h1>
+    <input type="text" id="wordInput" placeholder="Type here...">
+    <button onclick="checkWord()">Check</button>
+    <div id="result" class="icon"></div>
+
+    <script>
+        function checkWord() {
+            let input = document.getElementById("wordInput").value.toLowerCase();
+            let resultDiv = document.getElementById("result");
+            
+            if (input === "impressive") {
+                resultDiv.innerHTML = "✔";
+                resultDiv.className = "icon correct";
+            } else {
+                resultDiv.innerHTML = "✖";
+                resultDiv.className = "icon incorrect";
+            }
+        }
+    </script>
+
+</body>
+</html>
